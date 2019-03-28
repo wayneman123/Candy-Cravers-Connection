@@ -55,6 +55,9 @@
 
 	<!-- Main js file -->
 	<script src="js/main.js" type="text/javascript"></script>
+	
+	<!-- Data js file -->
+	<script src="js/Data.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -867,6 +870,24 @@
 			typeSpeed: 50,
 			loop: true,
 		});
+		
+		
+      let stateCheck = setInterval(() => {
+        if (document.readyState === 'complete') {
+          clearInterval(stateCheck);
+          // document ready
+          for (var i = 0; i < Accounts.length; i++){
+              var newRow = table.insertRow(table.length);
+              for(var j = 0; j < Accounts[i].length; j++){
+                var cell = newRow.insertCell(j);
+                cell.innerHTML = Accounts[i][j];
+              }
+          }
+          sortAccountsAsc();
+          loadTable(accounts);
+        } 
+      }, 100);
+
 	</script>
 </body>
 
