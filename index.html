@@ -871,23 +871,6 @@
 			loop: true,
 		});
 		
-		
-      let stateCheck = setInterval(() => {
-        if (document.readyState === 'complete') {
-          clearInterval(stateCheck);
-          // document ready
-          for (var i = 0; i < Accounts.length; i++){
-              var newRow = table.insertRow(table.length);
-              for(var j = 0; j < Accounts[i].length; j++){
-                var cell = newRow.insertCell(j);
-                cell.innerHTML = Accounts[i][j];
-              }
-          }
-          sortAccountsAsc();
-          loadTable(accounts);
-        } 
-      }, 100);
-
 	</script>
 </body>
 
